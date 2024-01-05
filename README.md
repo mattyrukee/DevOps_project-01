@@ -1,4 +1,4 @@
-# Introduction to Shell Scripting abd User Input
+# Introduction to Shell Scripting and User Input
 
 Shell scripting helps us automate repetitive task. Bash scripting are essentially a series of commands and instructions that are executed sequentially in a shell. These scripts can be executed directly from the command line ot called from other scripts.
 
@@ -29,17 +29,19 @@ re`
 
 <strong>Iterating through a list using a for loop</strong>
 
-`#!/bin/bash`
+~~~
+#!/bin/bash
 
-`# Example script to print numbers from 1 to 5 using a for loop`
+# Example script to print numbers from 1 to 5 using a for loop
 
-`for (( i=1; i<=5; i++ ))`
+for (( i=1; i<=5; i++ ))
 
-`do`
+do
 
-` echo $i`
+ echo $i
 
-`done`
+done
+~~~
 
 ![num 1](./Shell_Scripting/imgs/num%201.png)
 
@@ -72,16 +74,18 @@ echo "Hello world"
 
 5. Functions : Bash allows you to define and use functions to group related commands together. Functions provide a way to modularize your code and make it more reusable. You can define function by using the function keyword or simply by declaring the function name followed by parentheses.
 
-`#!/bin/bash`
+``````
+#!/bin/bash
 
-`# Define a function to greet the user
+# Define a function to greet the user
 greet() {
     echo "Hello, $1! Nice to meet you."
-}`
+}
 
-`# Call the greet function and pass the name as an argument`
+# Call the greet function and pass the name as an argument
 
-`greet "John"`
+greet "John"
+``````
 
 ![greet](./Shell_Scripting/imgs/greet.png)
 
@@ -97,14 +101,16 @@ Step 2 : Create a file called user-input.sh using the command `touch user-input.
 
 Step 3 : Inside the file, copy and paste the block of code below :
 
-`#!/bin/bash`
+``````
+#!/bin/bash
 
-`# Prompt the user for their name
+# Prompt the user for their name
 echo "Enter your name:"
-read name`
+read name
 
-`# Display a greeting with the entered name
-echo "Hello, $name! Nice to meet you."`
+# Display a greeting with the entered name
+echo "Hello, $name! Nice to meet you."
+``````
 
 The script prompts for your name. When you type your name, it displays the text hello ! Also `#!/bin/bash` helps you to specify the type of bash interpreter to be used to execute the script.
 
