@@ -1,4 +1,4 @@
-# Web Stack Implementation (Lemp Stack)
+z9o# Web Stack Implementation (Lemp Stack)
 
 WEB STACK IMPLEMENTATION (LEMP STACK)
 
@@ -388,9 +388,10 @@ die();
 
 Save and close the file when you are done editing.
 
-You can now access this page in your web browserby visiting the domain name or publi IP address configure for your website, followed by `/todo_list.php:`
+You can now access this page in your web browser by visiting the domain name or publi IP address configure for your website, followed by `/todo_list.php:`
 
 You should see a page like this, showing the content you've inserted in your test tables.
 
 ![web page](./imgs/last.png)
+
 
