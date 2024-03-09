@@ -27,7 +27,7 @@ We are going to be provisioning two EC2 instances running ubuntu 22.04 and insta
 
   - click on the instance ID to get the details of your EC2 instance.
 
-![details](./imgs/detail.png)
+![details](./imgs/instance%20state.png)
 
 - scroll down and click on security:
 
@@ -46,8 +46,6 @@ We are going to be provisioning two EC2 instances running ubuntu 22.04 and insta
 After provisioning both of the servers and have opened the necessary ports, its time to install apache software on both servers. We need to first connect to each of the webserver via ssh.
 
 - connecting the webserver: To connect the webserver, click on your instance Id, at the top of the page click on connect.
-
-![connect](./imgs/connect.png)
 
 - Next copy the ssh command, open a terminal on your local machine, cd into the folder where you have your key pair, paste the ssh command and click enter.
 
