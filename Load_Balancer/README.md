@@ -54,7 +54,7 @@ After provisioning both of the servers and have opened the necessary ports, its 
 ![ssh connect](./imgs/ssh%20connect.png)
 
 
-![succesful connection](./imgs/loggin.png)
+![Successful connection](./imgs/log%20in%201.png)
 
 - Next install apache with the command below
 
@@ -64,11 +64,11 @@ After provisioning both of the servers and have opened the necessary ports, its 
 
 - After installation verify if apache is running with
 
-![successful install apache](./imgs/succe.png)
+![successful install apache](./imgs/install%20apache%203.png)
 
 <b>Step 4:</b> Configure Apache to serve a page showing public IP.
 
-Now, we willconfigure apachewebserver to serve content on port 8000 instead of its default which is port 80. Next, we will create a new index.htmp fil. The file will contain code to display the public IP of the EC2 instance. Afterward, we override apache webserver's default htmlfile with our new file.
+Now, we will configure apachewebserver to serve content on port 8000 instead of its default which is port 80. Next, we will create a new index.htmp fil. The file will contain code to display the public IP of the EC2 instance. Afterward, we override apache webserver's default htmlfile with our new file.
 
 - configure Apache to Server content on port 8000:
 
@@ -78,13 +78,13 @@ Now, we willconfigure apachewebserver to serve content on port 8000 instead of i
 
   2. Add a new Listen directive for port 8000. 
 
-  ![listen](./imgs/listen.png)
+  ![listen](./imgs/port%208000%204.png)
 
   3. Next open the file sudo vi /etc/apache2/sites-available/000-default.conf and change port 80 on the virtualhost to 800 likethe screenshot below:
 
   `sudo vi /etc/apache2/sites-available/000-default.conf`
 
-![8000](./imgs/8000.png)
+![8000](./imgs/change%20port%2080%205.png)
 
  4. close the file
 
@@ -111,17 +111,16 @@ Now, we willconfigure apachewebserver to serve content on port 8000 instead of i
         </body>
         </html>`
 
-![change 8000](./imgs/index%20new.png)
+![New index](./imgs/new%20index%207.png)
 
 Replace "YOUR_PUBLIC_ with the public ip from your instance.
-
-![replace](./imgs/8000.png)
 
 3. change file ownership of the index.html file
 
 `sudo chown www-data:www-data ./index.html`
 
-![change](./imgs/change.png)
+![change ownership](./imgs/change%20ownership%208.png)
+
 - Override the default html file of Apache Webserver
 
 - Replace the default html file with a new html file
@@ -135,7 +134,11 @@ Replace "YOUR_PUBLIC_ with the public ip from your instance.
 
  You should see the below image when you load your IP on a web browser.
 
- ![webb](./imgs/webbb.png)
+ ![webb](./imgs/166.png)
+
+ Repeat the same process for as many servers you want to distribute load to. 
+
+ We will have only 2 servers in this projects and our IPs are:  174.129.165.186 and  54.166.83.207
 
  <b>Step5 :</b> Configuring Nginx as a Load Balancer
 
@@ -159,19 +162,24 @@ Replace "YOUR_PUBLIC_ with the public ip from your instance.
 
  - Paste the configuration file below to configure nginx to act like a load balance.
 
- ![replace the file](./imgs/nginx%20replace.png)
+ ![replace file](./imgs/replace%20new.png)
 
-- Tet your configuration 
+- Test your configuration 
 
 `sudo nginx -t`
 
-![test configuration](./imgs/test%20nginx.png)
+![testing nginx](./imgs/test%20ng.png)
 
 - restart Nginx to load the new configuration.
 
 `sudo systemctl restart nginx`
 
 Load your IP on a browser and you'll see the image below. Now your Nginx has been configured as a load balancer.
+
+![IP 1](./imgs/last%201.png)
+![IP 2](./imgs/last%202.png)
+
+Now Our load is evenly distributed among 2 different servers
 
 THANK YOU!!!
 
